@@ -37,22 +37,31 @@ img {
   display: block;
 }
 
+img:hover{
+   transition:transform 0.2s;
+   transform: scale(1.04);
+}
+
 a {
   color: inherit;
   text-decoration: none;
+ 
+ 
+
 }
 
 .container {
-  width: min(1100px, 92%);
+  width: min(1100px, 100%);
+
   margin-inline: auto;
 }
 
 /* ---------- Header ---------- */
 
 .site-header {
-  position: sticky;
+  /* position: ; */
   top: 0;
-  background: rgba(251, 246, 238, 0.96);
+  background: white;
   border-bottom: 1px solid var(--line);
 }
 
@@ -61,12 +70,21 @@ a {
   align-items: center;
   justify-content: space-between;
   padding: 14px 0;
+  background-color: white;
 }
 
 .logo {
   font-family: Georgia, "Times New Roman", serif;
   font-size: 1.5rem;
   font-weight: 700;
+  position: relative;
+  left: -150px;
+ 
+}
+.logo:hover{
+   /* transform:translate(2px); */
+   transition:transform 0.2s;
+   transform: scale(1.1);
 }
 
 .logo span {
@@ -74,22 +92,38 @@ a {
 }
 
 .nav-links {
-  dispaly: flex;
-  gap: 28px;
-  list-style: none;
+  display: flex;
+  gap: 45px;
+  list-style: none; 
+
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 0;
+   position: relative;
+  left: 50px;
+  background-color: white;
+  
 }
 
 .nav-links a {
-  font-weight: 500;
-  color: var(--muted);
+  font-weight: 800;
+  /* color: var(--muted); */
+  color: #e6d6c0;
   padding-bottom: 4px;
   border-bottom: 2px solid transparent;
   transition: color 0.2s, border-color 0.2s;
+  background-color: #3d2a20;
+  border-radius: 14%;
+  padding: 7px;
 }
 
 .nav-links a:hover {
-  color: var(--ink);
+  /* color: var(--ink); */
   border-color: var(--accent);
+  background-color:  white;
+  color: #3d2a20;
+  
+
 }
 
 /* ---------- Buttons ---------- */
@@ -107,10 +141,13 @@ a {
   transition: background 0.2s, border-color 0.2s, transform 0.2s;
 }
 
-.btn:hovr {
+.btn:hover {
   background: var(--accent-dark);
   border-color: var(--accent-dark);
   transform: translateY(-2px);
+  background-color: #3d2a20;
+  color: white;
+
 }
 
 .btn-outline {
@@ -154,10 +191,15 @@ a {
 
 .hero h1 {
   margin-bottom: 16px;
-  color: #3d2a20;
+  color: #e6d6c0;
   font-family: Georgia, "Times New Roman", serif;
   font-size: 4rem;
   line-height: 1.12;
+}
+
+.hero h1:hover{
+   transition:ease,transform 0.3s;
+   transform: scale(1.04);
 }
 
 .hero p {
@@ -165,6 +207,7 @@ a {
   margin-bottom: 28px;
   color: #e6d6c0;
 }
+
 
 .hero .eyebrow {
   margin-bottom: 12px;
@@ -176,6 +219,15 @@ a {
   gap: 14px;
   flex-wrap: wrap;
 }
+.hero-actions a {
+background-color: #eadfce;
+color: #3d2a20;
+} 
+
+.hero-actions a :hover{
+background-color:#3d2a20;
+color:#eadfce;
+} 
 
 .hero-img {
   width: 420px;
@@ -200,8 +252,10 @@ a {
 
 .section-sub {
   margin-bottom: 40px;
-  color: #d6cbbb;
+  color: #000000;
   text-align: center;
+  font-weight: 700;
+  
 }
 
 /* ---------- Feature cards ---------- */
@@ -209,15 +263,22 @@ a {
 .cards {
   display: grid;
   grid-template-columns: repeat(3 1fr);
+  gap: 15px;
+}
+
+.card:hover{
+   transition:transform 0.2s;
+   transform: scale(1.03);
 }
 
 .card {
-  position: relative;
+  /* position: relative; */
   padding: 28px;
   background: var(--card);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   box-shadow: 0 6px 18px rgba(43, 29, 22, 0.06);
+ 
 }
 
 .card-icon {
@@ -258,6 +319,19 @@ a {
   flex-direction: column;
   gap: 6px;
   margin-bottom: 18px;
+  position: relative;
+  right: 12px;
+
+}
+
+.field:hover{
+   transition:ease,transform 0.3s;
+   transform: scale(1.01);
+}
+
+.contact-form:hover{
+   transition:transform 0.2s;
+   transform: scale(1.04);
 }
 
 .field label {
@@ -287,7 +361,16 @@ a {
 
 .contact-form .btn {
   width: 100%;
+  background-color: #27211d;
+
 }
+.contact-form .btn :hover {
+  width: 100%;
+  background-color: #6f645c;
+  color: white;
+
+}
+
 
 /* ---------- Footer ---------- */
 
@@ -301,7 +384,7 @@ a {
 
 /* ---------- Responsive ---------- */
 
-@media (max-width 720px) {
+@media (max-width: 768px) {
   .nav-links {
     gap: 16px;
   }
@@ -309,7 +392,10 @@ a {
   .nav-links a {
     font-size: 0.9rem;
   }
-
+ .hero{
+  display: flex;
+   flex-direction: row;
+ }
   .hero-inner {
     flex-direction: column;
     align-items: stretch;
@@ -324,4 +410,26 @@ a {
   .section {
     padding: 52px 0;
   }
+}
+
+
+.card2 {
+  display: grid;
+  grid-template-columns: repeat(3 1fr);
+  gap: 25px;
+}
+
+.card2:hover{
+   transition:transform 0.2s;
+   transform: scale(1.03);
+}
+
+.card2 {
+  /* position: relative; */
+  padding: 20px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: 0 6px 18px rgba(43, 29, 22, 0.06);
+ 
 }
